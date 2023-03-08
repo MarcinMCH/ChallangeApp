@@ -1,50 +1,52 @@
-﻿int number1 = 1000000000;
-int number2 = 2000000000;
-Console.WriteLine(number1 + number2);
+﻿var name = "Ewa";
+var sex = "k";
+var age = 18;
 
-// ==
-// !=
-// >
-// <
-// >=
-// <=
-
-var name = "Marcin";
-var age = 60;
-
-if (name == "Marci" || !(age < 40))
+if (sex == "m")
 {
-    Console.WriteLine("JESTEM MARCINEM LUB MAM PONIŻEJ 40 LAT.");
-}
-else
-{
-    Console.WriteLine("JESTEM KIMŚ INNYM");
-}
-
-// &&
-// ||
-// !
-
-if (age > 50)
-{
-    if (name == "Marcin")
+    if (age < 18)
     {
-        Console.WriteLine("Masz więcej niż 50lat i Masz na imie Marcin");
+        if (name == "Marcin")
+        {
+            Console.WriteLine("Niepełnoletni mężczyzna o imieniu Marcin");
+        }
+        else
+        {
+            Console.WriteLine("Niepełnoletni mężczyzna");
+        }
+
     }
     else
     {
-        Console.WriteLine("Masz więcej niż 50lat");
+        if (name == "Marcin")
+        {
+            Console.WriteLine("Pełnoletni mężczyzna o imieniu Marcin");
+        }
+        else
+        {
+            Console.WriteLine("Pełnoletni mężczyzna");
+        }
     }
 }
-else if (age > 40)
+else
 {
-    Console.WriteLine("Masz wiek w przedziale 40-50lat");
-}
-else if (age > 30)
-{
-    Console.WriteLine("Masz wiek w przedziale 30-40lat");
-}
-else if (age < 30)
-{
-    Console.WriteLine("Masz mniej niż 30lat");
+    if (age < 30)
+    {
+        Console.WriteLine("Kobieta poniżej 30lat");
+    }
+    else if (age > 30 && age == 33)
+    {
+        if (name == "Ewa")
+        {
+            Console.WriteLine("Ewa, lat 33");
+        }
+        else
+        {
+            Console.WriteLine("Kobieta w wieku 33 lat");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Kobieta powyżej 30 lat");
+    }
 }
