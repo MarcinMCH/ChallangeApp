@@ -1,52 +1,49 @@
-﻿var name = "Ewa";
-var sex = "k";
-var age = 18;
+﻿/*int[] grades = new int[5];
 
-if (sex == "m")
+List<string> dayOfWeeks = new List<string>();
+dayOfWeeks.Add("poniedziałek");
+dayOfWeeks.Add("wtorek");
+dayOfWeeks.Add("środa");
+dayOfWeeks.Add("czwartek");
+dayOfWeeks.Add("piątek");
+dayOfWeeks.Add("sobota");
+dayOfWeeks.Add("niedziela");
+
+
+for (int i=0; i<dayOfWeeks.Count; i++)
 {
-    if (age < 18)
-    {
-        if (name == "Marcin")
-        {
-            Console.WriteLine("Niepełnoletni mężczyzna o imieniu Marcin");
-        }
-        else
-        {
-            Console.WriteLine("Niepełnoletni mężczyzna");
-        }
+    Console.WriteLine(dayOfWeeks[i]);
+}
 
-    }
-    else
+Console.WriteLine("zmodyfikowana pętla FOR");
+
+foreach (var day in dayOfWeeks)
+{
+    Console.WriteLine("to jest " + day);
+}
+*/
+
+//przygotuj program, który policzy ile jakich cyfr występuje w podanej liczbie
+
+int number = 256698777;
+string numberToString = number.ToString();
+char[] digits = numberToString.ToArray(); // tablica z cyframi z liczby
+int[] digitSum = new int[10]; // tablica sumująca cyfry w liczbie
+foreach (var digit in digits)
+{
+    for (int i = 0; i < 10; i++)
     {
-        if (name == "Marcin")
+        int digitInt = (int)Char.GetNumericValue(digit);
+        if (digitInt == i)
         {
-            Console.WriteLine("Pełnoletni mężczyzna o imieniu Marcin");
-        }
-        else
-        {
-            Console.WriteLine("Pełnoletni mężczyzna");
+            digitSum[i] = digitSum[i] + 1;
         }
     }
 }
-else
-{
-    if (age < 30)
-    {
-        Console.WriteLine("Kobieta poniżej 30lat");
-    }
-    else if (age > 30 && age == 33)
-    {
-        if (name == "Ewa")
-        {
-            Console.WriteLine("Ewa, lat 33");
-        }
-        else
-        {
-            Console.WriteLine("Kobieta w wieku 33 lat");
-        }
-    }
-    else
-    {
-        Console.WriteLine("Kobieta powyżej 30 lat");
-    }
+Console.WriteLine("Podala liczba to: " + number + "\nWyniki:");
+int digitInConsole = 0;
+foreach (int result in digitSum)
+{ 
+    Console.WriteLine(digitInConsole+ " >> " + result);
+    digitInConsole = digitInConsole + 1;
 }
