@@ -2,15 +2,19 @@ namespace ChallangeApp.Tests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Test1()
+        public void WhenUserCollectedScore_ShouldReturnCorrectedResoult()
         {
-            Assert.Pass();
+            // arrange
+            var user = new User("Marcin", "5698");
+            user.AddScore(5);
+            user.AddScore(2);
+
+            // act
+            var result = user.result;
+
+            // assert
+            Assert.AreEqual(7, result);
         }
     }
 }
