@@ -16,8 +16,4 @@ user3.AddScore(3);
 user3.AddScore(2);
 user3.AddScore(2);
 
-//foreach (int a in user1.score)
-{
-    //Console.WriteLine(a);
-}
 
