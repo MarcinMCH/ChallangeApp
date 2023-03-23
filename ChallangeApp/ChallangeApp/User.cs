@@ -7,6 +7,10 @@
             this.login = login;
             this.password = password;
         }
+        public User(string login)
+        {
+            this.login = login;
+        }
 
         public string login { get; private set; }
         public string password { get; private set; }

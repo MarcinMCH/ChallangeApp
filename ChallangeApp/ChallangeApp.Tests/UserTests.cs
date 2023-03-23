@@ -1,6 +1,6 @@
 namespace ChallangeApp.Tests
 {
-    public class Tests
+    public class UserTests
     {
         [Test]
         public void WhenUserScoreSumIsPositive_ResultShouldBePositive()
