@@ -1,19 +1,17 @@
 ﻿using ChallangeApp;
 
-User user1 = new User("Marcin", "pierogi1234");
-User user2 = new User("Marta", "kokospoko");
-User user3 = new User("Andrzej", "1234");
+var emploee = new Emploee("Marcin", "Chmara");
+emploee.addGrades("Marcin");
+emploee.addGrades("1000");
+emploee.addGrades("2,5");
+emploee.addGrades(3.500000000000000000000000621358846854655555555555555555555555555555555555555555555555555555555555555555555555555555555555555555);
+emploee.addGrades(7);
+emploee.addGrades(8065465484622365482);
+emploee.addGrades("1,5");
+emploee.addGrades("9.23");
 
-user1.AddScore(5);
-user1.AddScore(2);
-user1.AddScore(3);
+var statistic = emploee.GetStatistic();
 
-user2.AddScore(4);
-user2.AddScore(5);
-user2.AddScore(5);
-
-user3.AddScore(3);
-user3.AddScore(2);
-user3.AddScore(2);
-
-
+Console.WriteLine($"Average: {statistic.Average:n2}");
+Console.WriteLine($"Max: {statistic.Max}");
+Console.WriteLine($"Min: {statistic.Min}");
