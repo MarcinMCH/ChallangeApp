@@ -41,7 +41,7 @@
             // act
             var statistic = emploee.GetStatistic();
             // assert
-            Assert.AreEqual(Math.Round(3.33333,2), Math.Round(statistic.Average,2));
+            Assert.AreEqual(Math.Round(3.33333, 2), Math.Round(statistic.Average, 2));
         }
     }
 }

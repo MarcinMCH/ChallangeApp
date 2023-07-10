@@ -13,7 +13,7 @@ public class Emploee
 
     public string Surname { get; private set; }
 
-    public void addGrades(float grade)
+    public void AddGrades(float grade)
     {
         if (grade >= 0 && grade <= 100)
         {
@@ -24,11 +24,11 @@ public class Emploee
             Console.WriteLine("Invalid grade value");
         }
     }
-    public void addGrades(string grade)
+    public void AddGrades(string grade)
     {
-        if (float.TryParse(grade.Replace('.',','), out float result) && result >= 0 && result <= 100)
+        if (float.TryParse(grade.Replace('.', ','), out float result) && result >= 0 && result <= 100)
         {
-            this.addGrades(result);
+            this.AddGrades(result);
         }
         else if (result < 0 || result > 100)
         {
@@ -39,30 +39,16 @@ public class Emploee
             Console.WriteLine("String is not float");
         }
     }
-    public void addGrades(double grade)
+    public void AddGrades(double grade)
     {
-        if (grade >= 0 && grade <= 100)
-        {
-            float gradeToFloat = (float)grade;
-            this.grades.Add(gradeToFloat);
-        }
-        else
-        {
-            Console.WriteLine("Invalid grade value");
-        }
+        float gradeToFloat = (float)grade;
+        this.AddGrades(gradeToFloat);
     }
 
-    public void addGrades(long grade)
+    public void AddGrades(long grade)
     {
-        if (grade >= 0 && grade <= 100)
-        {
-            float gradeToFloat = (float)grade;
-            this.grades.Add(gradeToFloat);
-        }
-        else
-        {
-            Console.WriteLine("Invalid grade value (long)");
-        }
+        float gradeToFloat = (float)grade;
+        this.AddGrades(gradeToFloat);
     }
 
     public Statistics GetStatistic()
@@ -82,5 +68,10 @@ public class Emploee
         statistic.Average /= this.grades.Count;
 
         return statistic;
+    }
+
+    public Statistics GetStatisticsWithFor()
+    {
+
     }
 }
