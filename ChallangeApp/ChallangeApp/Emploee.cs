@@ -51,7 +51,7 @@ public class Emploee
         this.AddGrades(gradeToFloat);
     }
 
-    public Statistics GetStatistic()
+    public Statistics GetStatisticForeach()
     {
         var statistic = new Statistics();
         statistic.Average = 0;
@@ -70,8 +70,33 @@ public class Emploee
         return statistic;
     }
 
-    public Statistics GetStatisticsWithFor()
+    public Statistics GetStatisticWithFor()
     {
+        var statistic = new Statistics();
+        statistic.Average = 0;
+        statistic.Max = float.MinValue;
+        statistic.Min = float.MaxValue;
+        
+        for (var i = 0; i < this.grades.Count; i++)
+        {
+            statistic.Max = Math.Max(statistic.Max, this.grades[i]);
+            statistic.Min = Math.Min(statistic.Min, this.grades[i]);
+            statistic.Average += this.grades[i];
+        }
 
+        statistic.Average /= this.grades.Count;
+
+        return statistic;
+    }
+
+    public Statistics GetStatisticWithDoWhile()
+    {
+        var statistic = new Statistics();
+        statistic.Average = 0;
+        statistic.Max = float.MinValue;
+        statistic.Min = float.MaxValue;
+
+        do
+            // dokończyć pętle DoWhile i While
     }
 }

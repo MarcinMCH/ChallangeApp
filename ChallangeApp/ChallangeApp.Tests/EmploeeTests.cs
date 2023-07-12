@@ -7,9 +7,9 @@
         {
             // arrange
             var emploee = new Emploee("Marcin", "Chmara");
-            emploee.addGrades(0);
-            emploee.addGrades(6);
-            emploee.addGrades(50);
+            emploee.AddGrades(0);
+            emploee.AddGrades(6);
+            emploee.AddGrades(50);
             // act
             var statistic = emploee.GetStatistic();
             // assert
@@ -21,9 +21,9 @@
         {
             // arrange
             var emploee = new Emploee("Marcin", "Chmara");
-            emploee.addGrades(75);
-            emploee.addGrades(6);
-            emploee.addGrades(5);
+            emploee.AddGrades(75);
+            emploee.AddGrades(6);
+            emploee.AddGrades(5);
             // act
             var statistic = emploee.GetStatistic();
             // assert
@@ -35,9 +35,9 @@
         {
             // arrange
             var emploee = new Emploee("Marcin", "Chmara");
-            emploee.addGrades(2);
-            emploee.addGrades(5);
-            emploee.addGrades(3);
+            emploee.AddGrades(2);
+            emploee.AddGrades(5);
+            emploee.AddGrades(3);
             // act
             var statistic = emploee.GetStatistic();
             // assert
