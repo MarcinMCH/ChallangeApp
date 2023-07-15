@@ -76,7 +76,7 @@ public class Emploee
         statistic.Average = 0;
         statistic.Max = float.MinValue;
         statistic.Min = float.MaxValue;
-        
+
         for (var i = 0; i < this.grades.Count; i++)
         {
             statistic.Max = Math.Max(statistic.Max, this.grades[i]);
@@ -95,8 +95,40 @@ public class Emploee
         statistic.Average = 0;
         statistic.Max = float.MinValue;
         statistic.Min = float.MaxValue;
+        var index = 0;
 
         do
-            // dokończyć pętle DoWhile i While
+        {
+            statistic.Max = Math.Max(statistic.Max, this.grades[index]);
+            statistic.Min = Math.Min(statistic.Min, this.grades[index]);
+            statistic.Average += this.grades[index];
+            index++;
+        }
+        while (index < this.grades.Count);
+
+        statistic.Average /= index;
+
+        return statistic;
+    }
+
+    public Statistics GetStatisticWithWhile()
+    {
+        var statistic = new Statistics();
+        statistic.Average = 0;
+        statistic.Max = float.MinValue;
+        statistic.Min = float.MaxValue;
+        var index = 0;
+
+        while (index < this.grades.Count)
+        {
+            statistic.Max = Math.Max(statistic.Max, this.grades[index]);
+            statistic.Min = Math.Min(statistic.Min, this.grades[index]);
+            statistic.Average += this.grades[index];
+            index++;
+        }
+
+        statistic.Average /= index;
+
+        return statistic;
     }
 }
