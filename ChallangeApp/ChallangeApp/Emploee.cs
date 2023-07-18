@@ -51,7 +51,40 @@ public class Emploee
         this.AddGrades(gradeToFloat);
     }
 
-    public Statistics GetStatisticForeach()
+    public void AddGrades(char grade)
+    {
+        switch(grade) 
+        {
+            case 'A':
+            case 'a':
+                this.grades.Add(100);
+                break;
+            case 'B':
+            case 'b':
+                this.grades.Add(80);
+                break;
+            case 'C':
+            case 'c':
+                this.grades.Add(60);
+                break;
+            case 'D':
+            case 'd':
+                this.grades.Add(40);
+                break;
+            case 'E':
+            case 'e':
+                this.grades.Add(20);
+                break;
+            case 'F':
+            case 'f':
+                this.grades.Add(0);
+                break;
+            default:
+                Console.WriteLine("Wrong Letter");
+                break;
+        }
+    }
+    public Statistics GetStatistic()
     {
         var statistic = new Statistics();
         statistic.Average = 0;
@@ -67,68 +100,26 @@ public class Emploee
 
         statistic.Average /= this.grades.Count;
 
-        return statistic;
-    }
-
-    public Statistics GetStatisticWithFor()
-    {
-        var statistic = new Statistics();
-        statistic.Average = 0;
-        statistic.Max = float.MinValue;
-        statistic.Min = float.MaxValue;
-
-        for (var i = 0; i < this.grades.Count; i++)
+        switch (statistic.Average)
         {
-            statistic.Max = Math.Max(statistic.Max, this.grades[i]);
-            statistic.Min = Math.Min(statistic.Min, this.grades[i]);
-            statistic.Average += this.grades[i];
+            case var avarge when avarge >= 80:
+                statistic.AvarageLetter = 'A';
+                break;
+            case var avarge when avarge >= 60:
+                statistic.AvarageLetter = 'B';
+                break;
+            case var avarge when avarge >= 40:
+                statistic.AvarageLetter = 'C';
+                break;
+            case var avarge when avarge >= 20:
+                statistic.AvarageLetter = 'D';
+                break;
+            default:
+                statistic.AvarageLetter = 'E';
+                break;
         }
 
-        statistic.Average /= this.grades.Count;
-
         return statistic;
     }
 
-    public Statistics GetStatisticWithDoWhile()
-    {
-        var statistic = new Statistics();
-        statistic.Average = 0;
-        statistic.Max = float.MinValue;
-        statistic.Min = float.MaxValue;
-        var index = 0;
-
-        do
-        {
-            statistic.Max = Math.Max(statistic.Max, this.grades[index]);
-            statistic.Min = Math.Min(statistic.Min, this.grades[index]);
-            statistic.Average += this.grades[index];
-            index++;
-        }
-        while (index < this.grades.Count);
-
-        statistic.Average /= index;
-
-        return statistic;
-    }
-
-    public Statistics GetStatisticWithWhile()
-    {
-        var statistic = new Statistics();
-        statistic.Average = 0;
-        statistic.Max = float.MinValue;
-        statistic.Min = float.MaxValue;
-        var index = 0;
-
-        while (index < this.grades.Count)
-        {
-            statistic.Max = Math.Max(statistic.Max, this.grades[index]);
-            statistic.Min = Math.Min(statistic.Min, this.grades[index]);
-            statistic.Average += this.grades[index];
-            index++;
-        }
-
-        statistic.Average /= index;
-
-        return statistic;
-    }
 }

@@ -1,31 +1,45 @@
 ﻿using ChallangeApp;
 using System;
 
+//var emploee = new Emploee("Marcin", "Chmara");
+//emploee.AddGrades(5);
+//emploee.AddGrades(2);
+//emploee.AddGrades("8.0");
+//emploee.AddGrades('B');
+//emploee.AddGrades(6);
+
+//var statistic = emploee.GetStatistic();
+
+//Console.WriteLine($"Average: {statistic.Average:n2}");
+//Console.WriteLine($"Max: {statistic.Max}");
+//Console.WriteLine($"Min: {statistic.Min}");
+//Console.WriteLine($"Average Latter: {statistic.AvarageLetter}");
+
+Console.WriteLine("Witaj w programie XYZ do oceny Pracowników");
+Console.WriteLine("==========================================");
+Console.WriteLine();
+Console.WriteLine("Podaj pierwszą ocenę Pracownika:");
+
 var emploee = new Emploee("Marcin", "Chmara");
-emploee.AddGrades(5);
-emploee.AddGrades(2);
-emploee.AddGrades("8.0");
 
-Console.WriteLine("FOR---------------------------------------");
+do
+{
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break;
+    }
+    emploee.AddGrades(input);
+    Console.WriteLine("Podaj kolejną ocenę Pracownika");
 
-var statistic = emploee.GetStatisticWithFor();
+} while (true);
 
-Console.WriteLine($"Average: {statistic.Average:n2}");
+var statistic = emploee.GetStatistic();
+Console.WriteLine($"Średnia: {statistic.Average}");
 Console.WriteLine($"Max: {statistic.Max}");
 Console.WriteLine($"Min: {statistic.Min}");
+Console.WriteLine($"Ocena: {statistic.Average}");
 
-Console.WriteLine("DOWHILE-----------------------------------");
 
-var statistic2 = emploee.GetStatisticWithDoWhile();
-
-Console.WriteLine($"Average: {statistic2.Average:n2}");
-Console.WriteLine($"Max: {statistic2.Max}");
-Console.WriteLine($"Min: {statistic2.Min}");
-
-Console.WriteLine("WHILE-----------------------------------");
-
-var statistic3 = emploee.GetStatisticWithDoWhile();
-
-Console.WriteLine($"Average: {statistic3.Average:n2}");
-Console.WriteLine($"Max: {statistic3.Max}");
-Console.WriteLine($"Min: {statistic3.Min}");
+//var statistic = emploee.GetStatistic();
+//Console.WriteLine(statistic.Average);
