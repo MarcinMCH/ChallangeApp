@@ -43,5 +43,34 @@
             // assert
             Assert.AreEqual(Math.Round(3.33333, 2), Math.Round(statistic.Average, 2));
         }
+
+        [Test]
+        public void WhenAddGradeBeChar_ShouldAddCorrectMark()
+        {
+            // arrange
+            var emploee = new Emploee("Marcon", "Chmara");
+            emploee.AddGrades('a');
+            emploee.AddGrades('C');
+            emploee.AddGrades('b');
+            // act
+            var statistic = emploee.GetStatistic();
+            // assert
+            Assert.AreEqual(80, statistic.Average);
+
+        }
+
+        [Test]
+        public void WhenAddGrade_ShouldReturnCorrectAvarageMarkLetter()
+        {
+            // arrange
+            var emploee = new Emploee("Marcon", "Chmara");
+            emploee.AddGrades(100);
+            emploee.AddGrades(40);
+            emploee.AddGrades(10);
+            // act
+            var statistic = emploee.GetStatistic();
+            // assert
+            Assert.AreEqual('C', statistic.AvarageLetter);
+        }
     }
 }
