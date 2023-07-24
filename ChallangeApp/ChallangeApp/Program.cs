@@ -1,5 +1,4 @@
 ﻿using ChallangeApp;
-using System;
 
 Console.WriteLine("Witaj w programie XYZ do oceny Pracowników");
 Console.WriteLine("==========================================");
@@ -15,7 +14,15 @@ do
     {
         break;
     }
-    emploee.AddGrades(input);
+
+    try
+    {
+        emploee.AddGrades(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
     Console.WriteLine("Podaj kolejną ocenę Pracownika");
 
 } while (true);
@@ -26,4 +33,4 @@ Console.WriteLine("==========================================");
 Console.WriteLine($"Średnia: {statistic.Average}");
 Console.WriteLine($"Max: {statistic.Max}");
 Console.WriteLine($"Min: {statistic.Min}");
-Console.WriteLine($"Ocena /{ statistic.AvarageLetter}/ dla średniej {statistic.Average}");
+Console.WriteLine($"Ocena /{statistic.AvarageLetter}/ dla średniej {statistic.Average}");

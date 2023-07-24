@@ -21,22 +21,20 @@ public class Emploee
         }
         else
         {
-            Console.WriteLine("Invalid grade value");
+            throw new Exception ("Invalid grade value");
+            //Console.WriteLine("Invalid grade value");
         }
     }
     public void AddGrades(string grade)
     {
-        if (float.TryParse(grade.Replace('.', ','), out float result) && result >= 0 && result <= 100)
+        if (float.TryParse(grade.Replace('.', ','), out float result))
         {
             this.AddGrades(result);
         }
-        else if (result < 0 || result > 100)
+        else 
         {
-            Console.WriteLine("String is float but value is invalid");
-        }
-        else
-        {
-            Console.WriteLine("String is not float");
+            throw new Exception("String value is not float");
+            //Console.WriteLine("String is float but value is invalid");
         }
     }
     public void AddGrades(double grade)
@@ -80,8 +78,8 @@ public class Emploee
                 this.grades.Add(0);
                 break;
             default:
-                Console.WriteLine("Wrong Letter");
-                break;
+                throw new Exception("Wrong Letter");
+                //Console.WriteLine("Wrong Letter");
         }
     }
     public Statistics GetStatistic()
