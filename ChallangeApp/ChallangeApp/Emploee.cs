@@ -1,17 +1,15 @@
 ﻿using System;
 
 namespace ChallangeApp;
-public class Emploee
+public class Emploee : Person
 {
     private List<float> grades = new List<float>();
+    public Emploee(string name, string surname, char sex)
+        : base(name, surname, sex)
+    { }
     public Emploee(string name, string surname)
-    {
-        this.Name = name;
-        this.Surname = surname;
-    }
-    public string Name { get; private set; }
-
-    public string Surname { get; private set; }
+       : base(name, surname)
+    { }
 
     public void AddGrades(float grade)
     {
