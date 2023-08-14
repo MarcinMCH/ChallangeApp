@@ -5,7 +5,7 @@ Console.WriteLine("==========================================");
 Console.WriteLine();
 Console.WriteLine("Podaj pierwszą ocenę Pracownika:");
 
-var emploee = new Emploee("Marcin", "Chmara");
+var emploee = new Supervisor("Marcin", "Chmara");
 
 do
 {
