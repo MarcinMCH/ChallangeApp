@@ -5,7 +5,7 @@ public class Emploee : IEmploy
 {
     private List<float> grades = new List<float>();
     public Emploee(string name, string surname)
-    { 
+    {
         this.Name = name;
         this.Surname = surname;
     }
@@ -21,7 +21,7 @@ public class Emploee : IEmploy
         }
         else
         {
-            throw new Exception ("Invalid grade value");
+            throw new Exception("Invalid grade value");
             //Console.WriteLine("Invalid grade value");
         }
     }
@@ -31,7 +31,7 @@ public class Emploee : IEmploy
         {
             this.AddGrades(result);
         }
-        else 
+        else
         {
             throw new Exception("String value is not float");
             //Console.WriteLine("String is float but value is invalid");
@@ -51,7 +51,7 @@ public class Emploee : IEmploy
 
     public void AddGrades(char grade)
     {
-        switch(grade) 
+        switch (grade)
         {
             case 'A':
             case 'a':
