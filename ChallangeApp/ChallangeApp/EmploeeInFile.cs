@@ -3,6 +3,8 @@
     public class EmploeeInFile : EmploeeBase
     {
         private const string fileName = "grades.txt";
+
+        private List<float> grades = new List<float>();
         public EmploeeInFile(string name, string surname)
             : base(name, surname)
         {
@@ -80,10 +82,12 @@
                     throw new Exception("Wrong Letter");
             }
         }
-
         public override Statistics GetStatistic()
         {
             var statistic = new Statistics();
+            statistic.Average = 0;
+            statistic.Max = float.MinValue;
+            statistic.Min = float.MaxValue;
 
             if (File.Exists(fileName))
             {
@@ -93,16 +97,10 @@
                     while (line != null)
                     {
                         var grade = float.Parse(line);
-                        // Jak wykorzystać pobrane dane, stworzyć listę do obsługi?
+                        this.grades.Add(grade);
                     }
                 }
             }
-            return statistic;
-
-            var statistic2 = new Statistics();
-            statistic.Average = 0;
-            statistic.Max = float.MinValue;
-            statistic.Min = float.MaxValue;
 
             foreach (var grade in this.grades)
             {

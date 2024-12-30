@@ -6,7 +6,18 @@ Console.WriteLine();
 Console.WriteLine("Podaj pierwszą ocenę Pracownika:");
 
 var emploee = new EmploeeInFile("Marcin", "Chmara");
-emploee.AddGrades(1.5f);
+emploee.AddGrades(20f);
+emploee.AddGrades(74);
+emploee.AddGrades(50);
+emploee.AddGrades('A');
+emploee.AddGrades(80);
+emploee.AddGrades(21);
+
+var statistic = EmploeeInFile.GetStatistic();
+Console.WriteLine("==========================================");
+Console.WriteLine($"Średnia: {statistic.Average}");
+Console.WriteLine($"Max: {statistic.Max}");
+Console.WriteLine($"Min: {statistic.Min}");
 
 //do
 //{
