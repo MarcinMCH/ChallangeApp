@@ -6,7 +6,6 @@
         public EmploeeInMemory(string name, string surname) 
             : base(name, surname)
         {
-
         }
 
         public override void AddGrades(float grade)

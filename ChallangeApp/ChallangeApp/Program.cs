@@ -1,5 +1,7 @@
 ﻿using ChallangeApp;
 
+// Zacząć od lekcji 16 - przykład implementacji z użyciem klasy bazowej
+
 Console.WriteLine("Witaj w programie XYZ do oceny Pracowników");
 Console.WriteLine("==========================================");
 Console.WriteLine();
